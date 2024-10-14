@@ -903,6 +903,15 @@ service vendor.power_off_alarm /vendor/bin/power_off_alarm
     disabled
     oneshot
 
+service sim-restart /system/bin/init.sim.restart.sh
+    class main
+    user root
+    oneshot
+    disabled
+    
+on property:sys.boot_completed=1
+    start sim-restart
+
 service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
     class main
     disabled

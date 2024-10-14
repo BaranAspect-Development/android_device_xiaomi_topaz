@@ -326,6 +326,7 @@ PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
     init.qti.early_init.sh \
     init.qti.kernel.sh \
+    init.sim.restart.sh \
     init.qti.write.sh \
     system_dlkm_modprobe.sh \
     vendor_modprobe.sh

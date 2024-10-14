@@ -141,6 +141,11 @@ sh_binary {
 }
 
 sh_binary {
+    name: "init.sim.restart.sh",
+    src: "bin/init.sim.restart.sh",
+}
+
+sh_binary {
     name: "system_dlkm_modprobe.sh",
     src: "bin/system_dlkm_modprobe.sh",
     vendor: true,
