@@ -444,7 +444,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Device-specific settings
  PRODUCT_PACKAGES += \
-     XiaomiParts
+    XiaomiParts \
+    XiaomiVoIPFix
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
