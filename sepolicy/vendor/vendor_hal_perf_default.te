@@ -1,0 +1,7 @@
+allow vendor_hal_perf_default surfaceflinger:dir r_dir_perms;
+allow vendor_hal_perf_default surfaceflinger:file r_file_perms;
+allow vendor_hal_perf_default surfaceflinger:process setsched;
+allow vendor_hal_perf_default update_engine:dir search;
+allow vendor_hal_perf_default update_engine:dir { search };
+allow vendor_hal_perf_default update_engine:file { read };
+allow vendor_hal_perf_default update_engine:file { open };

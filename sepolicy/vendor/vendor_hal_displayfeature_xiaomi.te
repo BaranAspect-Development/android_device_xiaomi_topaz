@@ -1,0 +1,11 @@
+# Allow vendor_hal_displayfeature_xiaomi_default to write to vendor_pps_socket
+allow vendor_hal_displayfeature_xiaomi_default vendor_pps_socket:sock_file write;
+# Allow vendor HAL to connect to /dev/socket/pps
+allow vendor_hal_displayfeature_xiaomi_default hal_graphics_composer_default:unix_stream_socket connectto;
+# Allow hal_graphics_composer_default to open vendor_sensors_prop
+allow hal_graphics_composer_default vendor_sensors_prop:file open;
+# Allow hal_graphics_composer to read vendor sensors property
+allow hal_graphics_composer_default vendor_sensors_prop:file read;
+# Allow hal_graphics_composer_default to read vendor_sensors_prop
+allow hal_graphics_composer_default vendor_sensors_prop:file { getattr read };
+

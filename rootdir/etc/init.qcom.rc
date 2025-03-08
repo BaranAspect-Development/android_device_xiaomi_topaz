@@ -86,6 +86,75 @@ on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy
 
 on init
+     # Boot time stune
+     write /dev/stune/schedtune.prefer_idle 1
+     write /dev/stune/schedtune.boost 100
+     on property:sys.boot_completed=1
+     # Reset stune
+     write /dev/stune/schedtune.prefer_idle 0
+     write /dev/stune/schedtune.boost 0
+ 
+     # Also disable EAS during boot
+     on init
+     write /sys/kernel/debug/sched_features NO_ENERGY_AWARE
+     on property:sys.boot_completed=1
+     write /sys/kernel/debug/sched_features ENERGY_AWARE
+ 
+ on init
+     # Disable UFS powersaving
+     write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 0
+     write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 0
+     write /sys/devices/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 0
+     write /sys/module/lpm_levels/parameters/sleep_disabled Y
+ on property:sys.boot_completed=1
+     # Enable UFS powersaving
+     write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
+     write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
+     write /sys/devices/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
+     write /sys/module/lpm_levels/parameters/sleep_disabled N
+ on charger
+     # Enable UFS powersaving
+     write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
+     write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
+     write /sys/devices/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
+     write /sys/class/typec/port0/port_type sink
+     write /sys/module/lpm_levels/parameters/sleep_disabled N
+
+on init
+    copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
+
+    # Migrate tasks again in case kernel threads are created during boot
+    on property:sys.boot_completed=1
+    copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
+
+    # Configure uclamp
+    write /dev/cpuctl/top-app/cpu.uclamp.min 1.00
+    write /dev/cpuctl/foreground/cpu.uclamp.min 0.00
+    write /dev/cpuctl/background/cpu.uclamp.max 512
+    write /dev/cpuctl/system-background/cpu.uclamp.max 512
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max 615
+    # Setup cpu.shares to throttle background groups (bg ~ 5% sysbg ~ 5% dex2oat ~2.5%)
+    write /dev/cpuctl/background/cpu.shares 1024
+    write /dev/cpuctl/system-background/cpu.shares 1024
+    write /dev/cpuctl/dex2oat/cpu.shares 512
+    write /dev/cpuctl/system/cpu.shares 20480
+    # We only have system and background groups holding tasks and the groups below are empty
+    write /dev/cpuctl/camera-daemon/cpu.shares 20480
+    write /dev/cpuctl/foreground/cpu.shares 20480
+    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
+    write /dev/cpuctl/rt/cpu.shares 20480
+    write /dev/cpuctl/top-app/cpu.shares 20480
+
+    on init
+    # Boot time uclamp tuning
+    write /dev/cpuctl/top-app/cpu.uclamp.min 15.90
+    write /dev/cpuctl/foreground/cpu.uclamp.min 15.90
+    write /dev/cpuctl/system/cpu.uclamp.min 15.90
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp_min 51.20
+    # RT uclamp setting
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
+
+on init
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
@@ -472,6 +541,8 @@ service vendor.ss_ramdump /vendor/bin/subsystem_ramdump 3
     user system
     group system root media_rw everybody
     capabilities NET_ADMIN
+    # setting RLIMIT_RTPRIO allows binder RT priority inheritance
+    rlimit rtprio 10 10
     ioprio rt 4
     disabled
 

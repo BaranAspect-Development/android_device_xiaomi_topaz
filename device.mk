@@ -191,6 +191,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor \
+    vendor.lineage.livedisplay@2.0-service-sdm \
+    vendor.lineage.livedisplay@2.1-service.xiaomi_sm6225 \
     vendor.qti.hardware.display.mapperextensions@1.0.vendor \
     vendor.qti.hardware.display.mapperextensions@1.1.vendor
 
@@ -582,6 +584,32 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+
+# Logging
+ SPAMMY_LOG_TAGS := \
+     MiStcImpl \
+     SDM \
+     SDM-histogram \
+     SRE \
+     WifiHAL \
+     cnss-daemon \
+     libcitsensorservice@2.0-impl \
+     libsensor-displayalgo \
+     libsensor-parseRGB \
+     libsensor-ssccalapi \
+     sensors \
+     vendor.qti.hardware.display.composer-service \
+     vendor.xiaomi.sensor.citsensorservice@2.0-service
+ 
+ ifneq ($(TARGET_BUILD_VARIANT),eng)
+ PRODUCT_VENDOR_PROPERTIES += \
+     $(foreach tag,$(SPAMMY_LOG_TAGS),log.tag.$(tag)=E)
+ endif
+
+# Preopt critical applications
+ PRODUCT_DEXPREOPT_SPEED_APPS += \
+     SettingsGoogle \
+     SystemUIGoogle
 
 # WiFi
 PRODUCT_PACKAGES += \

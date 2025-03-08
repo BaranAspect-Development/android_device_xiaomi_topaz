@@ -6,50 +6,27 @@
 
 <resources>
 
-    <!-- Location on the screen of the center of the fingerprint sensor. For devices with under
+    <!--  Location on the screen of the center of the fingerprint sensor. For devices with under
     display fingerprint sensors, this directly corresponds to the fingerprint sensor's location.
     For devices with sensors on the back of the device, this corresponds to the location on the
     screen directly in front of the sensor.
-    By default, this is set to @null to use the horizontal center of the screen. -->
-    <dimen name="physical_fingerprint_sensor_center_screen_location_x">1080px</dimen>
-
-    <!-- Location on the screen of the center of the fingerprint sensor. For devices with under
+    By default, this is set to @null to use the horizontal center of the screen.  -->
+<dimen name="physical_fingerprint_sensor_center_screen_location_x">1080px</dimen>
+<!--  Location on the screen of the center of the fingerprint sensor. For devices with under
     display fingerprint sensors, this directly corresponds to the fingerprint sensor's location.
     For devices with sensors on the back of the device, this corresponds to the location on the
-    screen directly in front of the sensor. -->
-     <dimen name="physical_fingerprint_sensor_center_screen_location_y">1030px</dimen>
-
-    <!-- Location on the screen of the center of the physical power button. This is a reasonable
-    default that should be overridden by device-specific overlays. -->
-    <dimen name="physical_power_button_center_screen_location_y">
-         @dimen/physical_fingerprint_sensor_center_screen_location_y
-    </dimen>
-
-    <!-- The default height of the status bar used in {@link SystemBarUtils#getStatusBarHeight} to
-         calculate the status bar height. -->
-    <dimen name="status_bar_height_default">94.0px</dimen>
-
-    <!-- Height of the status bar.
-         Do not read this dimen directly. Use {@link SystemBarUtils#getStatusBarHeight} instead.
-         -->
-    <dimen name="status_bar_height">@dimen/status_bar_height_default</dimen>
-
-    <!-- Height of the status bar in portrait.
-         Do not read this dimen directly. Use {@link SystemBarUtils#getStatusBarHeight} instead.
-         -->
-    <dimen name="status_bar_height_portrait">@dimen/status_bar_height_default</dimen>
-
-    <!-- Height of the status bar in landscape.
-         Do not read this dimen directly. Use {@link SystemBarUtils#getStatusBarHeight} instead.
-         -->
-    <dimen name="status_bar_height_landscape">@dimen/status_bar_height_default</dimen>
-
-    <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">13dp</dimen>
-
-    <!-- the padding on the end of the statusbar -->
-    <dimen name="status_bar_padding_end">0dp</dimen>
-
-    <!-- the padding on the top of the statusbar (usually 0) -->
-    <dimen name="status_bar_padding_top">3dp</dimen>
+    screen directly in front of the sensor.  -->
+<dimen name="physical_fingerprint_sensor_center_screen_location_y">1030px</dimen>
+<!--  Location on the screen of the center of the physical power button. This is a reasonable
+    default that should be overridden by device-specific overlays.  -->
+<dimen name="physical_power_button_center_screen_location_y"> @dimen/physical_fingerprint_sensor_center_screen_location_y </dimen>
+<!--  Default paddings for content around the corners.  -->
+<dimen name="rounded_corner_content_padding">10dp</dimen>
+<!--  The padding on the side of the navigation bar. Must be greater than or equal to
+          navigation_extra_key_width  -->
+<dimen name="navigation_side_padding">85.0dip</dimen>
+<!--  the padding on the start of the statusbar  -->
+<dimen name="status_bar_padding_start">0dp</dimen>
+<!--  the padding on the end of the statusbar  -->
+<dimen name="status_bar_padding_end">0dp</dimen>
 </resources>

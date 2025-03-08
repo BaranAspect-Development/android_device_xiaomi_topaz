@@ -19,7 +19,6 @@ AB_OTA_PARTITIONS += \
     init_boot \
     odm \
     product \
-    recovery \
     system \
     system_dlkm \
     system_ext \
@@ -38,7 +37,7 @@ TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_VARIANT := cortex-a73
 
-# ART
+# ART Dexopt & Debugs
 ART_BUILD_TARGET_NDEBUG := true
 ART_BUILD_TARGET_DEBUG := false
 ART_BUILD_HOST_NDEBUG := true
@@ -77,6 +76,12 @@ BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbs/dtbo.img
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
+
+# HWUI
+USE_OPENGL_RENDERER := true
+
+# HWUI For Performance
+HWUI_COMPILE_FOR_PERF := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_topaz
@@ -205,6 +210,14 @@ include device/xiaomi/sepolicy/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 #SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
+# Soong
+SOONG_CONFIG_NAMESPACES += xiaomiSm6225Vars
+SOONG_CONFIG_xiaomiSm6225Vars += \
+    livedisplay_support_anti_flicker \
+    livedisplay_support_sunlight_enhancement
+SOONG_CONFIG_xiaomiSm6225Vars_livedisplay_support_anti_flicker ?= true
+SOONG_CONFIG_xiaomiSm6225Vars_livedisplay_support_sunlight_enhancement ?= true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true

@@ -46,5 +46,9 @@ service vendor.goodix-events /vendor/bin/init.goodix.events.sh
 on property:sys.boot_completed=1
     start vendor.goodix-events
 
+on property:sys.boot_completed=1
+     # Only owner can acces this node
+     chmod 440 /proc/net/unix
+
 on property:ro.boot.hwname=*
     setprop ro.boot.product.hardware.sku ${ro.boot.hwname}

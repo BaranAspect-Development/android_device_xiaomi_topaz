@@ -40,6 +40,32 @@ on early-init
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qti.early_init.sh
     setprop ro.soc.model ${ro.vendor.qti.soc_model}
 
+on early-init
+    # Start audio adsp rpc daemon at early init stage
+    start vendor.audioadsprpcd_audiopd
+
+on early-init
+    # Disable multiple kswapd threads
+    write /proc/sys/vm/kswapd_threads 1
+    # Set CPU Boost Duration
+    write /sys/devices/system/cpu/cpu_boost/input_boost_ms 200
+    write /proc/sys/walt/input_boost/input_boost_ms 200
+    write /proc/sys/walt/input_boost/powerkey_input_boost_ms 500
+    # Disable vblank IRQ immediately after turning off
+    write /sys/module/drm/parameters/vblankoffdelay -1
+    # Configure uclamp
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
+    # Enable suspend to RAM
+    write /sys/power/mem_sleep "deep"
+
+on property:vendor.post_boot.parsed=1
+    write /dev/cpuset/background/cpus 0-1
+    # IRQ 218: msm_drm0 -> CPU 7
+    # IRQ 209: kgsl_3d0_irq -> CPU 6
+    write /proc/irq/209/smp_affinity_list 7
+    write /proc/irq/218/smp_affinity_list 6
+
+
 on init
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
     write /dev/stune/top-app/schedtune.sched_boost_no_override 1
@@ -297,6 +323,14 @@ on property:persist.sys.cota.carrier=OR
 on property:sys.boot_completed=1
     # Disable statsd service to prevent additional battery drain
     stop statsd
+
+on property:dalvik.vm.heapstartsize=16
+     write /proc/sys/vm/watermark_boost_factor 0
+
+on property:vendor.post_boot.parsed=1
+     # Disable process_reclaim
+     write /sys/module/process_reclaim/parameters/enable_process_reclaim 0
+     write /proc/sys/vm/swappiness 180
 
 #add for btmac property
 on property:persist.ro.ril.oem.btmac=*
