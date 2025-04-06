@@ -159,6 +159,8 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 # Charger
 PRODUCT_PACKAGES += \
+    charger_res_images \
+    charger_res_images_vendor \
     libsuspend
 
 # Dex/ART optimization
