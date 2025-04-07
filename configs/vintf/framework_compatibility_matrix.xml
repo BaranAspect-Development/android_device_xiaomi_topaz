@@ -1028,13 +1028,4 @@
         </interface>
     </hal>
 
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.limits</name>
-        <version>1.2</version>
-        <interface>
-            <name>ILimits</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-
 </compatibility-matrix>
