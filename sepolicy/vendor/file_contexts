@@ -31,10 +31,3 @@
 
 # Power
 /vendor/bin/hw/android\.hardware\.power-service-qti                     u:object_r:hal_power_default_exec:s0
-
-# HALS
-/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.xiaomi_sm6225   u:object_r:hal_lineage_livedisplay_qti_exec:s0
-
-# HBM
-/sys/devices/platform/soc/soc:qcom,dsi-display/hbm                   u:object_r:sysfs_hbm:s0
-/sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable      u:object_r:sysfs_anti_flicker:s0
