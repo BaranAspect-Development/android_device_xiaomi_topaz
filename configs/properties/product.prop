@@ -22,3 +22,6 @@ ro.iorapd.enable=false
 iorapd.perfetto.enable=false
 iorapd.readahead.enable=false
 persist.device_config.runtime_native_boot.iorap_readahead_enable=false
+
+# Disable RescueParty due to high risk of data loss
+persist.sys.disable_rescue=true
