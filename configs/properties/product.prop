@@ -25,3 +25,6 @@ persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 
 # Disable RescueParty due to high risk of data loss
 persist.sys.disable_rescue=true
+
+# VSync
+debug.cpurend.vsync=false
