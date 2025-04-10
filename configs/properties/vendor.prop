@@ -187,6 +187,7 @@ debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
 persist.sys.sf.color_mode=268
 persist.sys.sf.color_saturation=1.0
+ro.config.avoid_gfx_accel=true
 persist.sys.sf.native_mode=256
 ro.surface_flinger.enable_frame_rate_override=false
 ro.surface_flinger.support_kernel_idle_timer=true
