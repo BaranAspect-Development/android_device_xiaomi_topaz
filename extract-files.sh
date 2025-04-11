@@ -75,6 +75,10 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             grep -q "setsockopt: 1" "${2}" || echo "setsockopt: 1" >> "${2}"
             ;;
+        vendor/lib64/libqcrilNr.so|vendor/lib64/libril-db.so)
+            [ "$2" = "" ] && return 0
+            sed -i 's/persist.vendor.radio.poweron_opt/persist.vendor.radio.poweron_ign/g' "${2}"
+            ;;
         vendor/lib64/vendor.libdpmframework.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
