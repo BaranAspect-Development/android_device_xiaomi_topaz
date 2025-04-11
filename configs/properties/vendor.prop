@@ -307,7 +307,7 @@ vendor.mm.enable.qcom_parser=16711663
 persist.mm.enable.prefetch=true
 
 # Netflix
-vendor.netflix.bsp_rev=Q6115-31409-1
+vendor.netflix.bsp_rev=Q6450-36256-1
 
 # NFC
 ro.vendor.se.type=HCE,UICC
