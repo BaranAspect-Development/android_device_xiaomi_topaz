@@ -214,6 +214,12 @@ on boot && property:persist.vendor.usb.controller.default=*
 on property:vendor.usb.controller=*
     setprop sys.usb.controller ${vendor.usb.controller}
 
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
+    class core
+    group system
+    disabled
+    oneshot
+
 on charger
     start vendor.power_off_alarm
     setprop vendor.usb.controller 4e00000.dwc3
