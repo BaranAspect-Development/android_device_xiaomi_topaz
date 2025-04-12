@@ -103,6 +103,20 @@ persist.log.tag.android.hardware.power-service-qti=S
 persist.log.tag.vendor.qti.vibrator=S
 persist.log.tag.imsd=S
 persist.log.tag.gsl=S
+persist.log.tag.PowerUI=S
+persist.log.tag.BackgroundInstallControlService=S
+persist.log.tag.HWUI=S
+persist.log.tag.NetworkStack=S
+persist.log.tag.ConnectivityService=S
+persist.log.tag.Bluetooth=S
+persist.log.tag.btif=S
+persist.log.tag.bluetooth_sco=S
+persist.log.tag.SensorService=S
+persist.log.tag.SensorManager=S
+persist.log.tag.PowerManagerService=S
+persist.log.tag.BatteryService=S
+persist.log.tag.SystemServer=S
+persist.log.tag.AppOps=S
 
 # SPAMMY E Log Tags
 persist.log.tag.ApexManager=E
