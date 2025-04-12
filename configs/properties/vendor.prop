@@ -290,6 +290,7 @@ ro.control_privapp_permissions=enforce
 # Logcat spam
 persist.log.tag.vendor.qti.bluetooth@1.0-ibs_handler=S
 persist.log.tag.android.hardware.power-service-qti=E
+ro.bluetooth.powerstats.disable=true
 
 # Incremental FS
 ro.incremental.enable=true
