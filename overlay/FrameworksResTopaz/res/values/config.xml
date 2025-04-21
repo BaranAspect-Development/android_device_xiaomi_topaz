@@ -464,7 +464,7 @@
     <string name="config_oemFastChargerStatusValue" translatable="false">3</string>
 
     <!-- Build fingerprint from stock ROM -->
-    <string name="config_stockFingerprint" translatable="false">Redmi/tapas_global/tapas:13/TKQ1.221114.001/OS2.0.5.0.VMTMIXM:user/release-keys</string>
+    <string name="config_stockFingerprint" translatable="false">Redmi/tapas_global/tapas:13/TKQ1.221114.001/OS2.0.11.0.VMTMIXM:user/release-keys</string>
 
     <!-- Device model (Build.MODEL) to spoof for netflix -->
     <string name="config_netflixSpoofModel" translatable="false">23021RAA2Y</string>

@@ -1,4 +1,4 @@
-# All blobs below are extracted from tapas OS2.0.5.0.VMTMIXM & eqs T1TBS33.32-8-9-7-2
+# All blobs below are extracted from tapas OS2.0.11.0.VMTMIXM & eqs T1TBS33.32-8-9-7-2
 
 # ACDB
 vendor/etc/acdbdata/bengal_idp/IDP_acdb_cal.acdb
