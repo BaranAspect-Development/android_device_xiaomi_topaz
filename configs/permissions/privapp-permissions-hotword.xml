@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?> 
 <permissions>
     <privapp-permissions package="com.android.hotwordenrollment.ygoogle">
         <permission name="android.permission.KEYPHRASE_ENROLLMENT_APPLICATION"/>
@@ -6,6 +6,11 @@
     </privapp-permissions>
 
     <privapp-permissions package="com.android.hotwordenrollment.xgoogle">
+        <permission name="android.permission.KEYPHRASE_ENROLLMENT_APPLICATION"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.android.hotwordenrollment.okgoogle">
         <permission name="android.permission.KEYPHRASE_ENROLLMENT_APPLICATION"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
     </privapp-permissions>
