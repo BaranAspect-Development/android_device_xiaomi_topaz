@@ -117,6 +117,10 @@ persist.log.tag.PowerManagerService=S
 persist.log.tag.BatteryService=S
 persist.log.tag.SystemServer=S
 persist.log.tag.AppOps=S
+persist.log.tag.ACDB-LOADER=S
+persist.log.tag.CVP=S
+persist.log.tag.ResourcesCompat=S
+persist.log.tag.SYNX-UMD=S
 
 # SPAMMY E Log Tags
 persist.log.tag.ApexManager=E
