@@ -459,4 +459,8 @@
     <!-- Device model (Build.MODEL) to spoof for netflix -->
     <string name="config_netflixSpoofModel" translatable="false">23021RAA2Y</string>
 
+    <!-- The maximum range of gamma adjustment possible using the screen
+         auto-brightness adjustment setting. -->
+    <fraction name="config_autoBrightnessAdjustmentMaxGamma">150.0%</fraction>
+
 </resources>
