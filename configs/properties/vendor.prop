@@ -280,6 +280,7 @@ ro.hwui.render_ahead=10
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 debug.sdm.support_writeback=0
+debug.sf.enable_adpf_cpu_hint=true
 
 # Keystore
 ro.hardware.keystore_desede=true
