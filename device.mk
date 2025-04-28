@@ -671,3 +671,9 @@ $(call inherit-product-if-exists, device/xiaomi/miuicamera-topaz/device.mk)
 
 # Call the BCR setup
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
+
+# Dolby
+$(call inherit-product, hardware/dolby/dolby.mk)
+
+PRODUCT_PACKAGES += \
+    libstagefright_foundation-v33
