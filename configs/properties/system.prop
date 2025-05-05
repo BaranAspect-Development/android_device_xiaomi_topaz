@@ -121,6 +121,7 @@ persist.log.tag.ACDB-LOADER=S
 persist.log.tag.CVP=S
 persist.log.tag.ResourcesCompat=S
 persist.log.tag.SYNX-UMD=S
+persist.log.tag.QTIPowerHAL=S
 
 # SPAMMY E Log Tags
 persist.log.tag.ApexManager=E
@@ -153,6 +154,13 @@ persist.log.tag.WifiHAL=E
 persist.log.tag.WindowManager=E
 persist.log.tag.WindowManagerShell=E
 persist.log.tag.android.vending=E
+persist.log.tag.statsd=E
+persist.log.tag.WifiVendorHal=E
+persist.log.tag.AudioPolicyConfig=E
+persist.log.tag.AudioPolicyService=E
+persist.log.tag.DisplayFeatureHal=E
+persist.log.tag.qti_sensors_hal=E
+persist.log.tag.BluetoothAdapterService=E
 
 # LMKD
 ro.lmk.kill_heaviest_task=true
