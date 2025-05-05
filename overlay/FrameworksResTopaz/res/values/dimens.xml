@@ -9,9 +9,6 @@
     <dimen name="rounded_corner_radius_bottom">70.0px</dimen>
     <dimen name="rounded_corner_radius_top">70.0px</dimen>
 
-    <!-- Default paddings for content around the corners. -->
-    <dimen name="rounded_corner_content_padding">47.0px</dimen>
-
     <!-- The default height of the status bar used in {@link SystemBarUtils#getStatusBarHeight} to
          calculate the status bar height. -->
     <dimen name="status_bar_height_default">94.0px</dimen>
