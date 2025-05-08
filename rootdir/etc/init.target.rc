@@ -340,6 +340,10 @@ on property:vendor.post_boot.parsed=1
      write /proc/sys/vm/swappiness 180
      write /proc/sys/vm/vfs_cache_pressure 50
 
+on property:vendor.post_boot.parsed=1
+    # Set restricted cpuset to the same CPUs as system-background
+    copy /dev/cpuset/system-background/cpus /dev/cpuset/restricted/cpus
+
 #add for btmac property
 on property:persist.ro.ril.oem.btmac=*
   setprop ro.ril.oem.btmac ${persist.ro.ril.oem.btmac}
