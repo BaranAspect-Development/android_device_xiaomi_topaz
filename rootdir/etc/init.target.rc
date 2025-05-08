@@ -64,7 +64,8 @@ on property:vendor.post_boot.parsed=1
     # IRQ 209: kgsl_3d0_irq -> CPU 6
     write /proc/irq/209/smp_affinity_list 7
     write /proc/irq/218/smp_affinity_list 6
-
+    # Setup foreground cpuset for display composer.
+    write /dev/cpuset/foreground/cpus 0-6
 
 on init
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
