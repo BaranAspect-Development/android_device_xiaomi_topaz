@@ -122,6 +122,7 @@ persist.log.tag.CVP=S
 persist.log.tag.ResourcesCompat=S
 persist.log.tag.SYNX-UMD=S
 persist.log.tag.QTIPowerHAL=S
+persist.log.tag.minksocket=S
 
 # SPAMMY E Log Tags
 persist.log.tag.ApexManager=E
