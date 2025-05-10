@@ -352,6 +352,7 @@ persist.vendor.sensors.debug.hal=0
 
 # USB
 ro.usb.uvc.enabled=true
+ro.usb.uvc.disable_video_encode_flag=true
 persist.sys.usb.config=none
 sys.usb.mtp.batchcancel=1
 vendor.usb.diag.func.name=ffs
