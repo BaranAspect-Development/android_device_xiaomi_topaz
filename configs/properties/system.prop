@@ -166,3 +166,4 @@ persist.log.tag.BluetoothAdapterService=E
 # LMKD
 ro.lmk.kill_heaviest_task=true
 ro.lmk.kill_timeout_ms=15
+ro.lmk.log_stats=false
