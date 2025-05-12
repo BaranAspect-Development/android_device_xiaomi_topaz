@@ -91,7 +91,6 @@ USE_OPENGL_RENDERER := true
 HWUI_COMPILE_FOR_PERF := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_topaz
 TARGET_RECOVERY_DEVICE_MODULES := init_topaz
 
 # Kernel

@@ -366,6 +366,9 @@ $(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/qcom-battery/input_suspend)
 $(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
 
+# Init
+$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_topaz)
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
