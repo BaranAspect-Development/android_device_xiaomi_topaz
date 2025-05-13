@@ -204,6 +204,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapperextensions@1.0.vendor \
     vendor.qti.hardware.display.mapperextensions@1.1.vendor
 
+$(call soong_config_set,qtidisplay,gralloc_handle_has_reserved_size,true)
+
 # Display NDK
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator-V1-ndk.vendor \
