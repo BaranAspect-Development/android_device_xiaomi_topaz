@@ -83,6 +83,10 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libbase_shim.so" "$2"
             ;;
+        vendor/lib64/hw/com.qti.chi.override.so|vendor/lib64/libcamxcommonutils.so|vendor/lib64/libmialgoengine.so|vendor/lib64/hw/camera.qcom.so)
+            [ "$2" = "" ] && return 0
+            grep -q "libprocessgroup_shim.so" "${2}" || "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
+            ;;
         vendor/lib64/vendor.libdpmframework.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
