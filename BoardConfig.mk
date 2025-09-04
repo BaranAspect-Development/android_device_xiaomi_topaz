@@ -29,9 +29,6 @@ AB_OTA_PARTITIONS += \
     vendor_boot \
     vendor_dlkm
 
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
-
 # Apex
 OVERRIDE_TARGET_FLATTEN_APEX := true
 
