@@ -1,0 +1,90 @@
+[
+  {
+    "repository": "vendor_xiaomi_topaz",
+    "target_path": "vendor/xiaomi/topaz"
+  },
+  {
+    "repository": "kernel_xiaomi_topaz",
+    "target_path": "device/xiaomi/topaz-kernel"
+  },
+  {
+    "repository": "hardware_xiaomi",
+    "target_path": "hardware/xiaomi"
+  },
+  {
+    "repository": "hardware_dolby",
+    "target_path": "hardware/dolby"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "BaranAspect-Development/android_device_xiaomi_miuicamera-topaz",
+    "target_path": "device/xiaomi/miuicamera-topaz",
+    "branch": "lineage-23.0"
+  },
+  {
+    "remote": "gitlab",
+    "repository": "AspectPower/android_vendor_xiaomi_miuicamera-topaz",
+    "target_path": "vendor/xiaomi/miuicamera-topaz",
+    "branch": "lineage-23.0"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "BaranAspect-Development/android_device_xiaomi_sepolicy",
+    "target_path": "device/xiaomi/sepolicy",
+    "branch": "lineage-23.0"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "rn124g-development/hardware_qcom-caf_common",
+    "target_path": "hardware/qcom-caf/common",
+    "branch": "sixteen"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "rn124g-development/android_device_qcom_sepolicy_vndr_sm6225",
+    "target_path": "device/qcom/sepolicy_vndr/sm6225",
+    "branch": "sixteen"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "rn124g-development/android_hardware_qcom-caf_sm6225_audio_agm",
+    "target_path": "hardware/qcom-caf/sm6225/audio/agm",
+    "branch": "sixteen"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "rn124g-development/android_hardware_qcom-caf_sm6225_audio_pal",
+    "target_path": "hardware/qcom-caf/sm6225/audio/pal",
+    "branch": "sixteen"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "rn124g-development/android_hardware_qcom-caf_sm6225_audio_primary-hal",
+    "target_path": "hardware/qcom-caf/sm6225/audio/primary-hal",
+    "branch": "sixteen"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "rn124g-development/android_hardware_qcom-caf_sm6225_dataipa",
+    "target_path": "hardware/qcom-caf/sm6225/dataipa",
+    "branch": "sixteen"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "rn124g-development/android_hardware_qcom-caf_sm6225_data-ipa-cfg-mgr",
+    "target_path": "hardware/qcom-caf/sm6225/data-ipa-cfg-mgr",
+    "branch": "sixteen"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "rn124g-development/android_hardware_qcom-caf_sm6225_display",
+    "target_path": "hardware/qcom-caf/sm6225/display",
+    "branch": "sixteen"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "rn124g-development/android_hardware_qcom-caf_sm6225_media",
+    "target_path": "hardware/qcom-caf/sm6225/media",
+    "branch": "sixteen"
+  }
+]

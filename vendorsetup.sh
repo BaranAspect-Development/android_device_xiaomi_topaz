@@ -1,0 +1,1 @@
+rm -rf hardware/qcom-caf/sdm660 hardware/qcom-caf/sdm845 hardware/qcom-caf/sm8150 hardware/qcom-caf/sm8250 hardware/qcom-caf/sm8350 hardware/qcom-caf/sm8450 hardware/qcom-caf/sm8550 hardware/qcom-caf/sm8650 hardware/qcom-caf/sm8750

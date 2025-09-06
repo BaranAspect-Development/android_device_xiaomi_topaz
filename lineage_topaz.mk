@@ -18,6 +18,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 WITH_GMS := true
 # Use mini Gapps to have less bloat
 TARGET_USES_MINI_GAPPS := true
+# EvoX Official
+EVO_BUILD_TYPE := Official
 
 PRODUCT_NAME := lineage_topaz
 PRODUCT_DEVICE := topaz
