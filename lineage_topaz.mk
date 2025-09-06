@@ -16,6 +16,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # To include Gapps 
 WITH_GMS := true
+# Use mini Gapps to have less bloat
+TARGET_USES_MINI_GAPPS := true
 
 PRODUCT_NAME := lineage_topaz
 PRODUCT_DEVICE := topaz
